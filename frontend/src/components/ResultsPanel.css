@@ -1,0 +1,334 @@
+.results-container {
+  max-width: 100%;
+}
+
+.results-section {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.results-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #1a1a1a;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  margin-left: 8px;
+}
+
+.section-description {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.effort-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.effort-card {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.effort-label {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.effort-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 2px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.metric-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+  margin: 16px 0;
+}
+
+.staffing-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 2px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-money {
+  margin-left: auto;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.phase-bars {
+  margin: 16px 0;
+}
+
+.phase-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.phase-bar-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1a1a;
+  min-width: 120px;
+}
+
+.phase-bar-background {
+  flex: 1;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.phase-bar-fill {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.phase-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.phase-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #fafafa;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.phase-name {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.phase-details {
+  color: #666;
+}
+
+.price-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
+
+.price-card-highlight {
+  background-color: #fff3e0;
+  border: 1px solid #FFE0B2;
+}
+
+.price-label {
+  font-size: 11px;
+  color: #666;
+}
+
+.price-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.price-note {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background-color: #FFF8E1;
+  border-left: 4px solid #FBC02D;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+.note-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  color: #FBC02D;
+}
+
+.note-text {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.assumptions-list {
+  margin: 12px 0;
+}
+
+.assumption-item {
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.assumption-text {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.assumption-input {
+  display: flex;
+  gap: 8px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.select-field {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: inherit;
+  min-width: 120px;
+}
+
+.btn-add-assumption {
+  padding: 6px 12px;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-assumption:hover {
+  background-color: #333;
+}
+
+.lock-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background-color: #f5f5f5;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+.btn-lock {
+  padding: 8px 16px;
+  background-color: #00897b;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.btn-lock:hover {
+  background-color: #00695c;
+}
+
+.lock-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.engine-info {
+  background-color: #fafafa;
+  padding: 12px;
+  font-size: 11px;
+  color: #999;
+  line-height: 1.6;
+  border-left: 4px solid #ccc;
+}
+
+.engine-info p {
+  margin: 0;
+}

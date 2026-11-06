@@ -1,0 +1,98 @@
+// Models to add to existing schema
+
+model Estimation {
+  id                    String      @id @default(cuid())
+  companyId             String
+  projectName           String
+  projectDescription    String?
+  projectType           String      // e.g., "B2B", "E-commerce", "Internal tool"
+  
+  // Form inputs
+  features              Feature[]
+  complexity            String      // "Low", "Medium", "High"
+  teamSize              Int?
+  teamExperience        String      // "Junior", "Mid", "Senior"
+  requirementsStability Int         // -2 to +2 (slider value)
+  architectureRework    Int         // -2 to +2
+  testingRequirements   Int         // -2 to +2
+  cicdMaturity          Int         // -2 to +2
+  platformAvailability  Int         // -2 to +2
+  domainFamiliarity     Int         // -2 to +2
+  toolsEnvironment      Int         // -2 to +2
+  scheduleCompression   Int         // -2 to +2
+  
+  // Calculations (auto-calculated)
+  estimatedHours        Float       // Total estimated hours
+  estimatedCost         Float       // Total estimated cost
+  costPerPersonMonth    Float?      // ₹/person/month
+  contingencyReserve    Float?      // P50 - P50 calculation
+  managementReserve     Float?      // Percentage based
+  
+  // Results
+  staffingBreakdown     StaffingBreakdown?
+  effortBreakdown       EffortBreakdown?
+  
+  // Metadata
+  status                String      @default("draft") // draft, saved, finalized
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+}
+
+model Feature {
+  id                String      @id @default(cuid())
+  estimationId      String
+  estimation        Estimation  @relation(fields: [estimationId], references: [id], onDelete: Cascade)
+  
+  name              String
+  description       String?
+  estimatedHours    Float
+  estimatedCost     Float?
+  complexity        String      // "Low", "Medium", "High"
+  priority          Int?        // 1-10
+  
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+}
+
+model StaffingBreakdown {
+  id                String      @id @default(cuid())
+  estimationId      String      @unique
+  estimation        Estimation  @relation(fields: [estimationId], references: [id], onDelete: Cascade)
+  
+  // Staffing by role
+  backendDevelopers Float
+  frontendDevelopers Float
+  qaEngineers       Float
+  devOpsEngineers   Float
+  designers         Float
+  projectManagers   Float
+  
+  totalHeadcount    Float
+  
+  createdAt         DateTime    @default(now())
+}
+
+model EffortBreakdown {
+  id                String      @id @default(cuid())
+  estimationId      String      @unique
+  estimation        Estimation  @relation(fields: [estimationId], references: [id], onDelete: Cascade)
+  
+  // Effort by phase (in person-months)
+  backend           Float
+  frontend          Float
+  qa                Float
+  devops            Float
+  design            Float
+  pm                Float
+  
+  // Effort by phase
+  requirements      Float
+  design            Float
+  implementation    Float
+  testing           Float
+  deployment        Float
+  
+  total             Float
+  
+  createdAt         DateTime    @default(now())
+}
