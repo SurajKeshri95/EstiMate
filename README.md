@@ -174,10 +174,6 @@ docker-compose up -d
 
 **Frontend cannot reach the backend.** Check that `frontend/.env` contains `VITE_API_URL=http://localhost:3001` and restart `npm run dev` after editing it.
 
-## Security notes
-
-- Never commit `.env` files. They are listed in `.gitignore`.
-- The database credentials in `docker-compose.yml` and the sample `.env` are for local development only. Use strong, unique values and a new `JWT_SECRET` before deploying.
 
 ## Author
 
